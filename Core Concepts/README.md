@@ -112,3 +112,63 @@ You can also use CLI tool to perform operations related to labels. For example, 
 
 You can verify that it worked by re-running below command and checking that the node now has a label.
 `kubectl get nodes --show-labels`
+
+### Kubernetes - PODS
+Pods are the smallest deployable units of computing that you can create and manage in Kubernetes. A Pod is a group of one or more containers, with shared storage and network resources, and a specification for how to run the containers.
+
+Below is the CLI command to create a nginx pod. This command will pull the ngnix image and create a pod using it.
+` kubectl run nginx --image=nginx`
+
+You can also create a pod using kubernetes manifest file as below.
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: static-web
+  labels:
+    role: myrole
+spec:
+  containers:
+    - name: web
+      image: nginx
+```
+And below manifest file configuration can be applied via this command
+`kubectl apply -f pod.yml`
+
+You can describe completed details about the pod
+```
+kubectl describe pod <Pod Name>
+kubectl get pods
+```
+
+### Kubernetes - Namespace
+Namespace provides an additional qualification to a resource name. This is helpful when multiple teams are using the same cluster and there is a potential of name collision. It can be as a virtual wall between multiple clusters.
+
+#### Functionality of Namespace
+Following are some of the important functionalities of a Namespace in Kubernetes −
+
+* Namespaces help pod-to-pod communication using the same namespace.
+
+* Namespaces are virtual clusters that can sit on top of the same physical cluster.
+
+* They provide logical separation between the teams and their environments.
+
+#### Create a Namespace
+Below is the CLI command to create a kubernetes namespace.
+` kubectl create namespace <Namespace Name>`
+
+You can also create a pod using kubernetes manifest file as below.
+```
+apiVersion: v1
+kind: Namespce
+metadata
+   name: elk
+```
+And below manifest file configuration can be applied via this command
+`kubectl apply -f namespace.yml`
+
+You can describe completed details about the pod
+```
+kubectl describe namespace <Namespce Name>
+kubectl get namespace <Namespce Name>
+```
