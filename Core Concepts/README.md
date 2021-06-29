@@ -107,16 +107,16 @@ spec:
     accelerator: nvidia-tesla-p100
 ```
 
-You can also use CLI tool to perform operations related to labels. For example, below command helps to add label to a node
+You can also use CLI tool to perform operations related to labels. For example, below command helps to add label to a node.<br/>
 `kubectl label nodes <node-name> <label-key>=<label-value>`
 
-You can verify that it worked by re-running below command and checking that the node now has a label.
+You can verify that it worked by re-running below command and checking that the node now has a label.<br/>
 `kubectl get nodes --show-labels`
 
 ### Kubernetes - PODS
 Pods are the smallest deployable units of computing that you can create and manage in Kubernetes. A Pod is a group of one or more containers, with shared storage and network resources, and a specification for how to run the containers.
 
-Below is the CLI command to create a nginx pod. This command will pull the ngnix image and create a pod using it.
+Below is the CLI command to create a nginx pod. This command will pull the ngnix image and create a pod using it.<br/>
 ` kubectl run nginx --image=nginx`
 
 You can also create a pod using kubernetes manifest file as below.
@@ -132,7 +132,7 @@ spec:
     - name: web
       image: nginx
 ```
-And below manifest file configuration can be applied via this command
+And below manifest file configuration can be applied via this command.<br/>
 `kubectl apply -f pod.yml`
 
 You can describe completed details about the pod
@@ -154,7 +154,7 @@ Following are some of the important functionalities of a Namespace in Kubernetes
 * They provide logical separation between the teams and their environments.
 
 #### Create a Namespace
-Below is the CLI command to create a kubernetes namespace.
+Below is the CLI command to create a kubernetes namespace.<br/>
 ` kubectl create namespace <Namespace Name>`
 
 You can also create a pod using kubernetes manifest file as below.
@@ -164,7 +164,7 @@ kind: Namespce
 metadata
    name: elk
 ```
-And below manifest file configuration can be applied via this command
+And below manifest file configuration can be applied via this command.<br/>
 `kubectl apply -f namespace.yml`
 
 You can describe completed details about the pod
