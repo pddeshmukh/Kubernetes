@@ -24,4 +24,4 @@ Kubernetes is a container management technology developed in Google lab to manag
 
 # Kubernetes - Cluster Architecture
 
-![alt text](https://github.com/pddeshmukh/Kubernetes/blob/master/Images/kubernetes-architecture.png?raw=true)
+![alt text](https://github.com/pddeshmukh/Kubernetes/blob/main/Images/kubernetes-architecture.png?raw=true)
