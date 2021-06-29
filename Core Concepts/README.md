@@ -55,7 +55,7 @@ This is a small service in each node responsible for relaying information to and
 #### Kubernetes Proxy Service
 This is a proxy service which runs on each node and helps in making services available to the external host. It helps in forwarding the request to correct containers and is capable of performing primitive load balancing. It manages pods on node, volumes, secrets, creating new containers’ health checkup, etc.
 
-### Kubernetes - Labels & Selectors
+## Kubernetes - Labels & Selectors
 
 #### Labels
 Labels are key/value pairs that are attached to objects, such as pods. Labels are intended to be used to specify identifying attributes of objects that are meaningful and relevant to users, but do not directly imply semantics to the core system
@@ -113,7 +113,7 @@ You can also use CLI tool to perform operations related to labels. For example, 
 You can verify that it worked by re-running below command and checking that the node now has a label.<br/>
 `kubectl get nodes --show-labels`
 
-### Kubernetes - PODS
+## Kubernetes - PODS
 Pods are the smallest deployable units of computing that you can create and manage in Kubernetes. A Pod is a group of one or more containers, with shared storage and network resources, and a specification for how to run the containers.
 
 Below is the CLI command to create a nginx pod. This command will pull the ngnix image and create a pod using it.<br/>
@@ -141,7 +141,7 @@ kubectl describe pod <Pod Name>
 kubectl get pods
 ```
 
-### Kubernetes - Namespace
+## Kubernetes - Namespace
 Namespace provides an additional qualification to a resource name. This is helpful when multiple teams are using the same cluster and there is a potential of name collision. It can be as a virtual wall between multiple clusters.
 
 #### Functionality of Namespace
