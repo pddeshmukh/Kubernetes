@@ -67,7 +67,6 @@ Labels are key/value pairs that are attached to objects, such as pods. Labels ar
     "key2" : "value2"
   }
 }
-
 ```
 For example, here's the configuration file for a Pod that has two labels `environment: production` and `app: nginx`
 
@@ -85,7 +84,6 @@ spec:
     image: nginx:1.14.2
     ports:
     - containerPort: 80
-
 ```
 
 ### Label selectors
