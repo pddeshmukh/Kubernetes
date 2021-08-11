@@ -172,3 +172,40 @@ You can describe completed details about the pod
 kubectl describe namespace <Namespce Name>
 kubectl get namespace <Namespce Name>
 ```
+
+## Kubernetes - Replicasets
+A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time. As such, it is often used to guarantee the availability of a specified number of identical Pods.
+
+#### Create Replicasets
+You can create a ReplicaSet using kubernetes manifest file as below.
+```
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend
+  labels:
+    app: guestbook
+    tier: frontend
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        tier: frontend
+    spec:
+      containers:
+      - name: php-redis
+        image: gcr.io/google_samples/gb-frontend:v3
+```
+And below manifest file configuration can be applied via this command.<br/>
+`kubectl apply -f replicaset.yml`
+
+You can describe completed details about the pod
+```
+kubectl describe rs <ReplicaSet Name>
+kubectl get rs <ReplicaSet Name>
+```
